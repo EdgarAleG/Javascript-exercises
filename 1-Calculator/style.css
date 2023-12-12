@@ -1,0 +1,125 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+*::after {
+  box-sizing: inherit;
+}
+
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  background: linear-gradient(45deg, #f06291, #fffde7);
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.calculator {
+  position: relative;
+  height: auto;
+  width: auto;
+  padding: 1.2em;
+  border-radius: 1em;
+  box-shadow: 0 0 30px rgb(187, 130, 130);
+  background-color: #fff;
+}
+.calculator .display {
+  color: #0a1e23;
+  margin-bottom: 1em;
+  height: 3em;
+  width: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-weight: 800;
+  font-size: 2em;
+}
+.calculator .btn-number {
+  background-color: #9BB8CD;
+  color: #000;
+}
+.calculator .btn-operator {
+  background-color: #EEC759;
+}
+.calculator .equal {
+  background-color: #B1C381;
+  height: 8em;
+  border-radius: 1.3em;
+}
+.calculator .clear {
+  background-color: #ffd5d8;
+  color: #fc4552;
+}
+.calculator.dark {
+  background-color: #222;
+}
+.calculator.dark .btn {
+  color: #fff;
+  font-weight: 600;
+}
+.calculator.dark .display {
+  color: #f8fafb;
+}
+.calculator.dark .btn-number {
+  background-color: #005B41;
+}
+.calculator.dark .btn-operator {
+  background-color: #F39F5A;
+}
+.calculator.dark .clear {
+  background-color: #363062;
+}
+.calculator.dark .equal {
+  background-color: #AE445A;
+}
+
+.theme-toggler {
+  position: absolute;
+  top: 1.3em;
+  right: 1.3em;
+  cursor: pointer;
+  z-index: 1;
+}
+.theme-toggler::before {
+  content: "";
+  position: absolute;
+  height: 1.4em;
+  width: 1.4em;
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, 0.5%);
+}
+
+.active {
+  color: #fff;
+}
+
+.bg--dark {
+  background: linear-gradient(45deg, #092635, #1B4242);
+}
+
+.btn {
+  height: 4em;
+  width: 4em;
+  border: 0;
+  border-radius: 50%;
+  margin: 0.3em;
+  cursor: pointer;
+  transition: transform 200ms ease;
+}
+.btn:hover {
+  transform: scale(1.1);
+}/*# sourceMappingURL=style.css.map */
