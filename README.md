@@ -5,9 +5,15 @@ Through this project I'll create some basic exercises using Javascript for pract
 ---
 
 ## 1-Calculator 
-### Dark theme
-![calculator dark theme](/src-photos/calculator-dark.png "dark theme")
+This is a simple calculator that can wich change between two themes.
 
-### Light theme
+- Dark theme:
+<img src="/src-photos/calculator-dark.png" width="300px" height="400px" alt="dark theme"></img>
+
+- Light theme:
 ![calculator light theme](/src-photos/calculator-light.png "light theme")
+
+---
+## 2-Customized Menu
+
 

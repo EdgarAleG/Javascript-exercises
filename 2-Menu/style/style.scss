@@ -1,0 +1,162 @@
+//@import "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap";
+:root {
+    --clr-orange: #f44336;
+    --clr-yellow: #ffa117;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+*::after {
+    box-sizing: inherit;
+}
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #3d4152;
+}
+
+.navigation {
+    position: fixed;
+    inset: 1.2em 0 1.2em 1.2em; //button right top left
+    width: 5.8em;
+    background-color: #fff;
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1em;
+
+    .menuToggle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3.75em;
+        border-bottom: 1px solid rgba(0,0,0,0.25);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 1.2em;
+
+        &::before{
+            content: '';
+            position: absolute;
+            width: 2em;
+            height: .2em;
+            background: #333;
+            transform: translateY(-8px);
+            transition: .5s;
+
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            width: 2em;
+            height: .2em;
+            background: #333;
+            transform: translateY(8px);
+            transition: .5s;
+            box-shadow: 0 -8px 0 #333;
+        }
+    }
+
+    .list-items {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        width: 100%;
+        .item {
+            list-style: none;
+            position: relative;
+            width: 100%;
+            height: 3.75em;
+            transition: .5s;
+
+            &.active {
+                transform: translateX(30px);
+                .item-link {
+                    .icon {
+                        color: #fff;
+                        background: var(--clr-orange);
+                        &::before {
+                            opacity: .5;
+                        }
+                    }
+                    // .text {
+                    //     color: var(--clr-orange);
+                    // }
+                }
+            }
+
+            .item-link {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                text-align: center;
+                text-decoration: none;
+                .icon {
+                    position: relative;
+                    display: block;
+                    min-width: 3.4em;
+                    height: 3.4em;
+                    line-height: 3.5em;
+                    transition: .5s;
+                    border-radius: .8em;
+                    font-size: 1.75em;
+                    color: #222;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 10px;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: var(--clr-yellow);
+                        filter: blur(50px);
+                        opacity: 0;
+                        transition: .5s;
+                    }
+                }
+
+                .text {
+                    position: relative;
+                    padding: 0 1em;
+                    height: 3.5em;
+                    display: flex;
+                    align-items: center;
+                    color: #000;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: .5s;
+                }
+            }
+        }
+    }
+    &.open .menuToggle::before{
+        transform: translateY(0px) rotate(45deg);
+    }
+    &.open {
+        width: 250px;
+    }
+    &.open .menuToggle::after{
+        transform: translateY(0px) rotate(-45deg);
+        box-shadow: 0 0 0 #333;
+    }
+    &.open .item.active {
+        transform: translateX(10px);
+    }
+
+    &.open .list-items .item .item-link .text {
+        opacity: 1;
+        visibility: visible;
+    }
+
+}
